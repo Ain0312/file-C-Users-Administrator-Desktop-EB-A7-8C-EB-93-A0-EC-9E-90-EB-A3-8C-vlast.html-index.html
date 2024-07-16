@@ -1,0 +1,321 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+    top: 0;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    padding: 10px;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+header h1 button {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav button {
+    font-size: 1.2rem;
+}
+
+/* main */
+main {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('../images/me.jpg')center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+
+}
+
+main h4 {
+    font-size: 2rem;
+}
+
+main h2 {
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+    /* letter-spacing: 글자와 글자 사이의 간격 */
+}
+
+main p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+main button.download {
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main button.mouse {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    animation: updown 1s infinite;
+}
+
+@keyframes updown {
+    0% {
+        bottom: 1rem;
+    }
+
+    50% {
+        bottom: 1.5rem;
+    }
+
+    100% {
+        bottom: 1rem;
+    }
+}
+
+main h2 span::after {
+    content: '';
+    width: 3px;
+    height: 40px;
+    background-color: #fff;
+    display: inline-block;
+    animation: blink .7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* section 공통 */
+section {
+    padding: 5rem 0;
+}
+
+section:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+
+section .title {
+    margin-bottom: 3rem;
+}
+
+section .title h4 {
+    font-size: 1.3rem;
+    color: tomato;
+}
+
+section .title h2 {
+    font-size: 3.5rem;
+}
+
+/* about */
+section .about-self::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+section .about-self .left {
+    float: left;
+    width: 50%;
+}
+
+section .about-self .left img {
+    min-width: 100%;
+}
+
+section .about-self .right {
+    float: left;
+    width: 50%;
+    padding: 0 2rem;
+}
+
+section .about-self .right h3 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+section .about-self .right h3 strong {
+    color: tomato;
+}
+
+section .about-self .right p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* what */
+section .do-me::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+section .do-me .do-inner {
+    width: 30%;
+    background-color: #fff;
+    padding: 2rem;
+    float: left;
+    margin-right: 5%;
+}
+
+section .do-me .do-inner:last-child {
+    margin-right: 0;
+}
+
+section .do-me .do-inner .content h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+/* background */
+.bg {
+    height: 650px;
+    background: url('../images/background.jpg') center/cover fixed;
+}
+
+/* portfolio */
+section .portfolio-me {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+section .portfolio-me .portfolio-inner {
+    width: 30%;
+    float: left;
+    margin-right: 5%;
+}
+
+section .portfolio-me .portfolio-inner:nth-child(3n) {
+    margin-right: 0;
+}
+
+section .portfolio-me .portfolio-inner img {
+    width: 100%;
+    display: block;
+}
+section .portfolio-me .portfolio-inner strong{
+    color: tomato;
+    margin: 0.5rem 0;
+    display: block;
+}
+section .portfolio-me .portfolio-inner h3 {
+    font-size: 1.8rem;
+}
+
+/* contact */
+section .contact-me::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+section .contact-me .left{
+    width: 30%;
+    float: left;
+}
+section .contact-me .left .card {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1.3rem;
+}
+section .contact-me .right{
+    width: 65%;
+    margin-left: 5%;
+    float: left;
+}
+section .contact-me .right .form-group{
+    margin-bottom: 1.3rem;
+}
+section .contact-me .right .form-group label{
+    display: block;
+    margin-bottom: 1rem;
+}
+section .contact-me .right .form-group input {
+    padding: 1rem;
+    width: 100%; 
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+section .contact-me .right .form-group input{
+    
+}
+section .contact-me .right .form-group input:focus {
+    border: 1px solid tomato;
+}
+section .contact-me .right .form-group textarea {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    padding: 1rem;
+}
+section .contact-me .right button {
+    width: 100%;
+    padding: 1rem;
+    background-color: tomato;
+    border: none;
+}
